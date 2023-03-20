@@ -164,7 +164,8 @@ describe('+ FilesController', () => {
           done();
         });
     });
-      it('+ Fails if type is missing', function (done) {
+
+    it('+ Fails if type is missing', function (done) {
       this.timeout(5000);
       request.post('/files')
         .set('X-Token', token)
@@ -228,8 +229,8 @@ describe('+ FilesController', () => {
           done();
         });
     });
-    
-        it('+ Succeeds for valid values of a file', function (done) {
+
+    it('+ Succeeds for valid values of a file', function (done) {
       this.timeout(5000);
       request.post('/files')
         .set('X-Token', token)
@@ -340,7 +341,8 @@ describe('+ FilesController', () => {
           done();
         });
     });
-  it('+ Fails for a non-existent user', function (done) {
+
+    it('+ Fails for a non-existent user', function (done) {
       this.timeout(5000);
       request.get('/files/444555666')
         .set('X-Token', 'raboof')
@@ -402,7 +404,7 @@ describe('+ FilesController', () => {
           done();
         });
     });
-    
+
     it('+ Fails for a non-existent user', function (done) {
       this.timeout(5000);
       request.get('/files')
@@ -447,7 +449,8 @@ describe('+ FilesController', () => {
           done();
         });
     });
-     it('+ Returns empty list for a page that is out of bounds', function (done) {
+
+    it('+ Returns empty list for a page that is out of bounds', function (done) {
       this.timeout(5000);
       request.get('/files?page=5')
         .set('X-Token', token)
@@ -552,8 +555,8 @@ describe('+ FilesController', () => {
         });
     });
   });
-  
-   describe('+ PUT: /files/:id/unpublish', () => {
+
+  describe('+ PUT: /files/:id/unpublish', () => {
     it('+ Fails with no "X-Token" header field', function (done) {
       request.put('/files/444555666/unpublish')
         .expect(401)
